@@ -1,5 +1,5 @@
-﻿ using System;
- using NUnit.Framework;
+﻿using AnotherAssembly;
+using NUnit.Framework;
 
  namespace NunitDummy
 {
@@ -7,9 +7,17 @@
     public class TestFixture
     {
         [Test]
-        public void Test1() => Assert.Fail();
+        public void ShouldFail() => Assert.Fail();
 
         [Test] 
-        public void Test2() => Assert.Pass();
+        public void ShouldPass()
+        {
+            MyClass.DoStuff();
+            Assert.Pass();
+        }
+
+        [Test] 
+        [Category("exclude")]
+        public void ShouldBeExcluded() => Assert.Fail();
     }
 }
