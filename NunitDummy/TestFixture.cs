@@ -1,23 +1,31 @@
-﻿using AnotherAssembly;
+﻿using System;
+using System.Collections.Generic;
+using AnotherAssembly;
 using NUnit.Framework;
+using System.Threading.Tasks;
 
- namespace NunitDummy
+namespace NunitDummy
 {
     [TestFixture]
     public class TestFixture
     {
         [Test]
-        public void ShouldFail() => Assert.Fail();
+        public void TestPass() => Assert.Pass();
 
-        [Test] 
-        public void ShouldPass()
+        [Test]
+        public void TestFail() => Assert.Fail();
+
+
+        public static async Task AStaticAsyncMethod( AnotherEnum ae)
         {
-            MyClass.DoStuff();
-            Assert.Pass();
+            Console.WriteLine(ae);
+            await Task.Delay(100);
         }
 
-        [Test] 
-        [Category("exclude")]
-        public void ShouldBeExcluded() => Assert.Fail();
+        public static IEnumerable<AnotherEnum> AnEnumerableMethod( AnotherEnum ae)
+        {
+            yield return ae;
+        }
+
     }
 }

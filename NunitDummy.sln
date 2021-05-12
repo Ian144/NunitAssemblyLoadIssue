@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NunitDummy", "NunitDummy\NunitDummy.csproj", "{37DDF7B8-1CBE-4606-AD2E-1B1B47C669EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnotherAssembly", "AnotherAssembly\AnotherAssembly.csproj", "{9E3C43FE-6E37-40F1-AEDC-1A8F3314136E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnotherAssembly", "AnotherAssembly\AnotherAssembly.csproj", "{9E3C43FE-6E37-40F1-AEDC-1A8F3314136E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleALC", "ConsoleALC\ConsoleALC.csproj", "{EA309FA5-095E-4205-9388-14CD34926A22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9E3C43FE-6E37-40F1-AEDC-1A8F3314136E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E3C43FE-6E37-40F1-AEDC-1A8F3314136E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E3C43FE-6E37-40F1-AEDC-1A8F3314136E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA309FA5-095E-4205-9388-14CD34926A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA309FA5-095E-4205-9388-14CD34926A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA309FA5-095E-4205-9388-14CD34926A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA309FA5-095E-4205-9388-14CD34926A22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
