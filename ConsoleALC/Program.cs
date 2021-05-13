@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
 
@@ -23,12 +24,19 @@ namespace ConsoleALC
 
     class Program
     {
-        static void Main()
+        static void Main( string[] args)
         {
-            string assemblyPath = @"C:\Users\Ian\Documents\GitHub\NunitDummy\NunitDummy\bin\Debug\netcoreapp3.1\NunitDummy.dll";
-            var alc = new CustomAssemblyLoadContext(assemblyPath);
-            var assembly = alc.LoadFromAssemblyPath(assemblyPath);
-            var ts = assembly.GetTypes();
+            AppDomain.CurrentDomain.AssemblyResolve += (obj, evArgs) =>
+            {
+                Console.WriteLine($"AssemblyResolve: {evArgs.Name}");
+                return null;
+            };
+
+            string assemblyPath = args[0];
+            string fullAssemblyPath = Path.GetFullPath(assemblyPath);
+            var alc = new CustomAssemblyLoadContext(fullAssemblyPath);
+            var assembly = alc.LoadFromAssemblyPath(fullAssemblyPath);
+            var ts = assembly.GetTypes(); // will throw ReflectionTypeLoadException here, as AssemblyB cannot be loaded
             foreach( var tt in ts)
                 Console.WriteLine(tt);
         }
